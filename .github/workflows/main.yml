@@ -16,7 +16,7 @@ jobs:
       DEFAULT_DST: github/xingren2020
       DEFAULT_RENAME_FMT: 's/(.*)/${SRC_TYPE}_${SRC_ACCOUNT}_\1/g'
     runs-on: ubuntu-latest
-    if: github.event.repository.owner.id == github.event.sender.id || github.event.sender.login == 'xingren2020'
+    if: github.event.repository.owner.id == github.event.sender.id || github.event.sender.login == 'ljw2019@@@'
 
     steps:
       - uses: actions/checkout@v2
