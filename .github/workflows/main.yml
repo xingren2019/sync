@@ -1,0 +1,57 @@
+name: xingren2020
+
+on:
+ schedule:
+   - cron: '46 */2 * * *'
+ workflow_dispatch:
+ watch:
+   types: started
+ repository_dispatch:
+   types: xingren2020
+
+jobs:
+  mirror:
+    env:
+      PAT: ${{ secrets.PAT }}
+      DEFAULT_DST: github/xingren2020
+      DEFAULT_RENAME_FMT: 's/(.*)/${SRC_TYPE}_${SRC_ACCOUNT}_\1/g'
+    runs-on: ubuntu-latest
+    if: github.event.repository.owner.id == github.event.sender.id || github.event.sender.login == 'xingren2020'
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - uses: actions/cache@v2
+        with:
+          path: | 
+            "${{ github.workspace }}/.cache"
+          key: ${{ runner.os }}-cache-actions
+          restore-keys: |
+            ${{ runner.os }}-cache-actions
+
+      - name: mirror github/LXK9301
+        uses: fakedon/hub-mirror-action@fakedon
+        with:
+          src: github/LXK9301
+          dst: ${{ env.DEFAULT_DST }}
+          dst_key: ${{ secrets.UUZ_GITHUB_SSH_KEY }}
+          dst_token: ${{ secrets.UUZ_GITHUB_TOKEN }}
+          static_list: "jd_scripts,updateTeam"
+          dst_account_type: org
+#           force_update: true
+          rename_dst: true
+          # clone_style: https
+          rename_fmt: ${{ env.DEFAULT_RENAME_FMT }}
+
+      - name: mirror github/Zero-S1
+        uses: fakedon/hub-mirror-action@fakedon
+        with:
+          src: github/Zero-S1
+          dst: ${{ env.DEFAULT_DST }}
+          dst_key: ${{ secrets.UUZ_GITHUB_SSH_KEY }}
+          dst_token: ${{ secrets.UUZ_GITHUB_TOKEN }}
+          static_list: "xmly_speed,JD_tools"
+          dst_account_type: org
+#           force_update: true
+          rename_dst: true
+          rename_fmt: ${{ env.DEFAULT_RENAME_FMT }}
