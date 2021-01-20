@@ -2,18 +2,19 @@ name: sinagod
 
 on:
  schedule:
-   - cron: '46 */2 * * *'
+   - cron: '26 */2 * * *'
  workflow_dispatch:
  watch:
    types: started
  repository_dispatch:
-   types: xingren2020
+   types: sinagod
 
 jobs:
   mirror:
     env:
       PAT: ${{ secrets.PAT }}
-      DEFAULT_DST: github/xingren2020
+      dst_key: ${{ secrets.GITEE_PRIVATE_KEY }}
+      DEFAULT_DST: github/sinagod
       DEFAULT_RENAME_FMT: 's/(.*)/${SRC_TYPE}_${SRC_ACCOUNT}_\1/g'
     runs-on: ubuntu-latest
     if: github.event.repository.owner.id == github.event.sender.id 
@@ -33,24 +34,21 @@ jobs:
         with:
           src: github/adwktt
           dst: ${{ env.DEFAULT_DST }}
-          dst_key: ${{ secrets.UUZ_GITHUB_SSH_KEY }}
-          dst_token: ${{ secrets.UUZ_GITHUB_TOKEN }}
-          static_list: "jd_scripts,updateTeam"
+          dst_key: ${{ secrets.GITHUB_SSH_KEY }}
+          dst_token: ${{ secrets.GITHUB_TOKEN }}
+          static_list: "adwktt,test"
           dst_account_type: user
 #           force_update: true
           rename_dst: true
           # clone_style: https
           rename_fmt: ${{ env.DEFAULT_RENAME_FMT }}
 
-      - name: mirror github/Zero-S1
-        uses: fakedon/hub-mirror-action@fakedon
+      - name: sync github -> gitee
+        uses: Yikun/hub-mirror-action@master
+        if: env.dst_key
         with:
-          src: github/Zero-S1
-          dst: ${{ env.DEFAULT_DST }}
-          dst_key: ${{ secrets.UUZ_GITHUB_SSH_KEY }}
-          dst_token: ${{ secrets.UUZ_GITHUB_TOKEN }}
-          static_list: "xmly_speed,JD_tools"
-          dst_account_type: user
-#           force_update: true
-          rename_dst: true
-          rename_fmt: ${{ env.DEFAULT_RENAME_FMT }}
+          src: github/sinagod
+          dst: gitee/the_king_god
+          static_list: "github_adwktt_adwktt,github_adwktt_test"
+          dst_key: ${{ secrets.GITEE_PRIVATE_KEY }}
+          dst_token: ${{ secrets.GITEE_TOKEN }}
