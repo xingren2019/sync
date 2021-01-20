@@ -34,8 +34,8 @@ jobs:
         with:
           src: github/adwktt
           dst: ${{ env.DEFAULT_DST }}
-          dst_key: ${{ secrets.GITHUB_SSH_KEY }}
-          dst_token: ${{ secrets.GITHUB_TOKEN }}
+          dst_key: ${{ secrets.SINA_GITHUB_SSH_KEY }}
+          dst_token: ${{ secrets.SINA_GITHUB_TOKEN }}
           static_list: "adwktt,test"
           dst_account_type: user
 #           force_update: true
