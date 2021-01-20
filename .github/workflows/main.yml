@@ -55,3 +55,31 @@ jobs:
 #           force_update: true
           rename_dst: true
           rename_fmt: ${{ env.DEFAULT_RENAME_FMT }}
+      
+      - name: mirror github/adwktt
+        uses: fakedon/hub-mirror-action@fakedon
+        with:
+          src: github/adwktt
+          dst: ${{ env.DEFAULT_DST }}
+          dst_key: ${{ secrets.UUZ_GITHUB_SSH_KEY }}
+          dst_token: ${{ secrets.UUZ_GITHUB_TOKEN }}
+          static_list: "adwktt,test"
+          dst_account_type: user
+#           force_update: true
+          rename_dst: true
+          # clone_style: https
+          rename_fmt: ${{ env.DEFAULT_RENAME_FMT }}
+
+#       - name: mirror github/LXK9301
+#         uses: fakedon/hub-mirror-action@fakedon
+#         with:
+#           src: github/LXK9301
+#           dst: ${{ env.DEFAULT_DST }}
+#           dst_key: ${{ secrets.UUZ_GITHUB_SSH_KEY }}
+#           dst_token: ${{ secrets.UUZ_GITHUB_TOKEN }}
+#           static_list: "jd_scripts,updateTeam"
+#           dst_account_type: org
+# #           force_update: true
+#           rename_dst: true
+#           # clone_style: https
+#           rename_fmt: ${{ env.DEFAULT_RENAME_FMT }}
