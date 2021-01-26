@@ -47,7 +47,7 @@ jobs:
       - name: mirror github/Sitoi
         uses: fakedon/hub-mirror-action@fakedon
         with:
-          src: github/adwktt
+          src: github/Sitoi
           dst: ${{ env.DEFAULT_DST }}
           dst_key: ${{ secrets.SINA_GITHUB_SSH_KEY }}
           dst_token: ${{ secrets.SINA_GITHUB_TOKEN }}
