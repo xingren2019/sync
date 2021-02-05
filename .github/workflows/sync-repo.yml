@@ -1,0 +1,541 @@
+name: sync-repo
+
+on:
+ schedule:
+   - cron: '25 */2 * * *'
+ workflow_dispatch:
+ watch:
+   types: started
+ repository_dispatch:
+   types: xingren2020
+
+jobs:
+  mirror:
+    env:
+      PAT: ${{ secrets.PAT }}
+      DEFAULT_DST: github/xingren2020
+      DEFAULT_RENAME_FMT: 's/(.*)/${SRC_TYPE}_${SRC_ACCOUNT}_\1/g'
+    runs-on: ubuntu-latest
+    if: github.event.repository.owner.id == github.event.sender.id 
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - uses: actions/cache@v2
+        with:
+          path: | 
+            "${{ github.workspace }}/.cache"
+          key: ${{ runner.os }}-cache-actions
+          restore-keys: |
+            ${{ runner.os }}-cache-actions
+      - name: mirror github/lxk0301
+        uses: fakedon/hub-mirror-action@fakedon
+        with:
+          src: github/lxk0301
+          dst: ${{ env.DEFAULT_DST }}
+          dst_key: ${{ secrets.UUZ_GITHUB_SSH_KEY }}
+          dst_token: ${{ secrets.UUZ_GITHUB_TOKEN }}
+          static_list: "jd_scripts"
+          dst_account_type: org
+#           force_update: true
+          rename_dst: true
+          # clone_style: https
+          rename_fmt: ${{ env.DEFAULT_RENAME_FMT }}
+
+      - name: mirror github/LXK9301
+        uses: fakedon/hub-mirror-action@fakedon
+        with:
+          src: github/LXK9301
+          dst: ${{ env.DEFAULT_DST }}
+          dst_key: ${{ secrets.UUZ_GITHUB_SSH_KEY }}
+          dst_token: ${{ secrets.UUZ_GITHUB_TOKEN }}
+          static_list: "jd_scripts,updateTeam"
+          dst_account_type: org
+#           force_update: true
+          rename_dst: true
+          # clone_style: https
+          rename_fmt: ${{ env.DEFAULT_RENAME_FMT }}
+
+      - name: mirror gitee/lxk0301
+        uses: fakedon/hub-mirror-action@fakedon
+        with:
+          src: gitee/lxk0301
+          dst: ${{ env.DEFAULT_DST }}
+          dst_key: ${{ secrets.UUZ_GITHUB_SSH_KEY }}
+          dst_token: ${{ secrets.UUZ_GITHUB_TOKEN }}
+          static_list: "scripts,jd_scripts"
+          dst_account_type: org
+#           force_update: true
+          rename_dst: true
+          # clone_style: https
+          rename_fmt: ${{ env.DEFAULT_RENAME_FMT }}
+
+      - name: mirror github/Zero-S1
+        uses: fakedon/hub-mirror-action@fakedon
+        with:
+          src: github/Zero-S1
+          dst: ${{ env.DEFAULT_DST }}
+          dst_key: ${{ secrets.UUZ_GITHUB_SSH_KEY }}
+          dst_token: ${{ secrets.UUZ_GITHUB_TOKEN }}
+          static_list: "xmly_speed,JD_tools"
+          dst_account_type: org
+#           force_update: true
+          rename_dst: true
+          rename_fmt: ${{ env.DEFAULT_RENAME_FMT }}
+
+      - name: mirror github/sazs34
+        uses: fakedon/hub-mirror-action@fakedon
+        with:
+          src: github/sazs34
+          dst: ${{ env.DEFAULT_DST }}
+          dst_key: ${{ secrets.UUZ_GITHUB_SSH_KEY }}
+          dst_token: ${{ secrets.UUZ_GITHUB_TOKEN }}
+          static_list: "MyActions" # "MyActions,TaskConfig,Convert"
+          dst_account_type: org
+#           force_update: true
+          rename_dst: true
+          rename_fmt: ${{ env.DEFAULT_RENAME_FMT }}
+
+      - name: mirror github/NobyDa
+        uses: fakedon/hub-mirror-action@fakedon
+        with:
+          src: github/NobyDa
+          dst: ${{ env.DEFAULT_DST }}
+          dst_key: ${{ secrets.UUZ_GITHUB_SSH_KEY }}
+          dst_token: ${{ secrets.UUZ_GITHUB_TOKEN }}
+          static_list: "Script"
+          dst_account_type: org
+#           force_update: true
+          rename_dst: true
+          rename_fmt: ${{ env.DEFAULT_RENAME_FMT }}
+
+      - name: mirror github/Sunert
+        uses: fakedon/hub-mirror-action@fakedon
+        with:
+          src: github/Sunert
+          dst: ${{ env.DEFAULT_DST }}
+          dst_key: ${{ secrets.UUZ_GITHUB_SSH_KEY }}
+          dst_token: ${{ secrets.UUZ_GITHUB_TOKEN }}
+          static_list: "Scripts"
+          dst_account_type: org
+#           force_update: true
+          rename_dst: true
+          rename_fmt: ${{ env.DEFAULT_RENAME_FMT }}
+
+      - name: mirror github/chavyleung
+        uses: fakedon/hub-mirror-action@fakedon
+        with:
+          src: github/chavyleung
+          dst: ${{ env.DEFAULT_DST }}
+          dst_key: ${{ secrets.UUZ_GITHUB_SSH_KEY }}
+          dst_token: ${{ secrets.UUZ_GITHUB_TOKEN }}
+          static_list: "scripts"
+          dst_account_type: org
+#           force_update: true
+          rename_dst: true
+          rename_fmt: ${{ env.DEFAULT_RENAME_FMT }}
+
+      - name: mirror github/Tartarus2014
+        uses: fakedon/hub-mirror-action@fakedon
+        with:
+          src: github/Tartarus2014
+          dst: ${{ env.DEFAULT_DST }}
+          dst_key: ${{ secrets.UUZ_GITHUB_SSH_KEY }}
+          dst_token: ${{ secrets.UUZ_GITHUB_TOKEN }}
+          static_list: "For-own-use,Loon-Script,Surge-Script,Shadowrocket-Script,QuantumultX-Script,Script"
+          dst_account_type: org
+#           force_update: true
+          rename_dst: true
+          rename_fmt: ${{ env.DEFAULT_RENAME_FMT }}
+
+      - name: mirror github/mengshouer
+        uses: fakedon/hub-mirror-action@fakedon
+        with:
+          src: github/mengshouer
+          dst: ${{ env.DEFAULT_DST }}
+          dst_key: ${{ secrets.UUZ_GITHUB_SSH_KEY }}
+          dst_token: ${{ secrets.UUZ_GITHUB_TOKEN }}
+          static_list: "CheckinBox"
+          dst_account_type: org
+#           force_update: true
+          rename_dst: true
+          rename_fmt: ${{ env.DEFAULT_RENAME_FMT }}
+
+      - name: mirror github/BlueskyClouds
+        uses: fakedon/hub-mirror-action@fakedon
+        with:
+          src: github/BlueskyClouds
+          dst: ${{ env.DEFAULT_DST }}
+          dst_key: ${{ secrets.UUZ_GITHUB_SSH_KEY }}
+          dst_token: ${{ secrets.UUZ_GITHUB_TOKEN }}
+          static_list: "My-Actions"
+          dst_account_type: org
+#           force_update: true
+          rename_dst: true
+          rename_fmt: ${{ env.DEFAULT_RENAME_FMT }}
+
+      - name: mirror github/zZPiglet
+        uses: fakedon/hub-mirror-action@fakedon
+        with:
+          src: github/zZPiglet
+          dst: ${{ env.DEFAULT_DST }}
+          dst_key: ${{ secrets.UUZ_GITHUB_SSH_KEY }}
+          dst_token: ${{ secrets.UUZ_GITHUB_TOKEN }}
+          static_list: "Task"
+          dst_account_type: org
+#           force_update: true
+          rename_dst: true
+          rename_fmt: ${{ env.DEFAULT_RENAME_FMT }}
+
+      - name: mirror github/jinboyigu
+        uses: fakedon/hub-mirror-action@fakedon
+        with:
+          src: github/jinboyigu
+          dst: ${{ env.DEFAULT_DST }}
+          dst_key: ${{ secrets.UUZ_GITHUB_SSH_KEY }}
+          dst_token: ${{ secrets.UUZ_GITHUB_TOKEN }}
+          static_list: "lazy_script"
+          dst_account_type: org
+#           force_update: true
+          rename_dst: true
+          rename_fmt: ${{ env.DEFAULT_RENAME_FMT }}
+
+      - name: mirror github/liuxiaoyucc
+        uses: fakedon/hub-mirror-action@fakedon
+        with:
+          src: github/liuxiaoyucc
+          dst: ${{ env.DEFAULT_DST }}
+          dst_key: ${{ secrets.UUZ_GITHUB_SSH_KEY }}
+          dst_token: ${{ secrets.UUZ_GITHUB_TOKEN }}
+          static_list: "jd-helper"
+          dst_account_type: org
+#           force_update: true
+          rename_dst: true
+          rename_fmt: ${{ env.DEFAULT_RENAME_FMT }}
+
+      - name: mirror github/799953468
+        uses: fakedon/hub-mirror-action@fakedon
+        with:
+          src: github/799953468
+          dst: ${{ env.DEFAULT_DST }}
+          dst_key: ${{ secrets.UUZ_GITHUB_SSH_KEY }}
+          dst_token: ${{ secrets.UUZ_GITHUB_TOKEN }}
+          static_list: "Quantumult-X"
+          dst_account_type: org
+#           force_update: true
+          rename_dst: true
+          rename_fmt: ${{ env.DEFAULT_RENAME_FMT }}
+
+      - name: mirror github/demo2099
+        uses: fakedon/hub-mirror-action@fakedon
+        with:
+          src: github/demo2099
+          dst: ${{ env.DEFAULT_DST }}
+          dst_key: ${{ secrets.UUZ_GITHUB_SSH_KEY }}
+          dst_token: ${{ secrets.UUZ_GITHUB_TOKEN }}
+          static_list: "jscool"
+          dst_account_type: org
+#           force_update: true
+          rename_dst: true
+          rename_fmt: ${{ env.DEFAULT_RENAME_FMT }}
+
+      - name: mirror github/wpc2333
+        uses: fakedon/hub-mirror-action@fakedon
+        with:
+          src: github/wpc2333
+          dst: ${{ env.DEFAULT_DST }}
+          dst_key: ${{ secrets.UUZ_GITHUB_SSH_KEY }}
+          dst_token: ${{ secrets.UUZ_GITHUB_TOKEN }}
+          static_list: "AutoWatch"
+          dst_account_type: org
+#           force_update: true
+          rename_dst: true
+          rename_fmt: ${{ env.DEFAULT_RENAME_FMT }}
+
+      - name: mirror github/yangtingxiao
+        uses: fakedon/hub-mirror-action@fakedon
+        with:
+          src: github/yangtingxiao
+          dst: ${{ env.DEFAULT_DST }}
+          dst_key: ${{ secrets.UUZ_GITHUB_SSH_KEY }}
+          dst_token: ${{ secrets.UUZ_GITHUB_TOKEN }}
+          static_list: "QuantumultX"
+          dst_account_type: org
+#           force_update: true
+          rename_dst: true
+          rename_fmt: ${{ env.DEFAULT_RENAME_FMT }}
+
+      - name: mirror github/whyour
+        uses: fakedon/hub-mirror-action@fakedon
+        with:
+          src: github/whyour
+          dst: ${{ env.DEFAULT_DST }}
+          dst_key: ${{ secrets.UUZ_GITHUB_SSH_KEY }}
+          dst_token: ${{ secrets.UUZ_GITHUB_TOKEN }}
+          static_list: "hundun"
+          dst_account_type: org
+#           force_update: true
+          rename_dst: true
+          rename_fmt: ${{ env.DEFAULT_RENAME_FMT }}
+
+      - name: mirror github/blackmatrix7
+        uses: fakedon/hub-mirror-action@fakedon
+        with:
+          src: github/blackmatrix7
+          dst: ${{ env.DEFAULT_DST }}
+          dst_key: ${{ secrets.UUZ_GITHUB_SSH_KEY }}
+          dst_token: ${{ secrets.UUZ_GITHUB_TOKEN }}
+          static_list: "ios_rule_script"
+          dst_account_type: org
+#           force_update: true
+          rename_dst: true
+          rename_fmt: ${{ env.DEFAULT_RENAME_FMT }}
+
+      - name: mirror github/barrym-chen
+        uses: fakedon/hub-mirror-action@fakedon
+        with:
+          src: github/barrym-chen
+          dst: ${{ env.DEFAULT_DST }}
+          dst_key: ${{ secrets.UUZ_GITHUB_SSH_KEY }}
+          dst_token: ${{ secrets.UUZ_GITHUB_TOKEN }}
+          static_list: "Script"
+          dst_account_type: org
+#           force_update: true
+          rename_dst: true
+          rename_fmt: ${{ env.DEFAULT_RENAME_FMT }}
+
+      - name: mirror github/ddgksf2013
+        uses: fakedon/hub-mirror-action@fakedon
+        with:
+          src: github/ddgksf2013
+          dst: ${{ env.DEFAULT_DST }}
+          dst_key: ${{ secrets.UUZ_GITHUB_SSH_KEY }}
+          dst_token: ${{ secrets.UUZ_GITHUB_TOKEN }}
+          static_list: "TaskAction,Cuttlefish,HttpCatcher"
+          dst_account_type: org
+#           force_update: true
+          rename_dst: true
+          rename_fmt: ${{ env.DEFAULT_RENAME_FMT }}
+
+      - name: mirror github/XidNDD
+        uses: fakedon/hub-mirror-action@fakedon
+        with:
+          src: github/XidNDD
+          dst: ${{ env.DEFAULT_DST }}
+          dst_key: ${{ secrets.UUZ_GITHUB_SSH_KEY }}
+          dst_token: ${{ secrets.UUZ_GITHUB_TOKEN }}
+          static_list: "2020scripts"
+          dst_account_type: org
+#           force_update: true
+          rename_dst: true
+          rename_fmt: ${{ env.DEFAULT_RENAME_FMT }}
+
+      - name: mirror github/elecV2
+        uses: fakedon/hub-mirror-action@fakedon
+        with:
+          src: github/elecV2
+          dst: ${{ env.DEFAULT_DST }}
+          dst_key: ${{ secrets.UUZ_GITHUB_SSH_KEY }}
+          dst_token: ${{ secrets.UUZ_GITHUB_TOKEN }}
+          static_list: "QuantumultX-Tools,elecV2P"
+          dst_account_type: org
+#           force_update: true
+          rename_dst: true
+          rename_fmt: ${{ env.DEFAULT_RENAME_FMT }}
+
+      - name: mirror github/gcdd1993
+        uses: fakedon/hub-mirror-action@fakedon
+        with:
+          src: github/gcdd1993
+          dst: ${{ env.DEFAULT_DST }}
+          dst_key: ${{ secrets.UUZ_GITHUB_SSH_KEY }}
+          dst_token: ${{ secrets.UUZ_GITHUB_TOKEN }}
+          static_list: "jd_scripts"
+          dst_account_type: org
+#           force_update: true
+          rename_dst: true
+          rename_fmt: ${{ env.DEFAULT_RENAME_FMT }}
+
+      - name: mirror github/jpcnmm
+        uses: fakedon/hub-mirror-action@fakedon
+        with:
+          src: github/jpcnmm
+          dst: ${{ env.DEFAULT_DST }}
+          dst_key: ${{ secrets.UUZ_GITHUB_SSH_KEY }}
+          dst_token: ${{ secrets.UUZ_GITHUB_TOKEN }}
+          static_list: "Scripting"
+          dst_account_type: org
+#           force_update: true
+          rename_dst: true
+          rename_fmt: ${{ env.DEFAULT_RENAME_FMT }}
+
+      - name: mirror github/wangdelu2020
+        uses: fakedon/hub-mirror-action@fakedon
+        with:
+          src: github/wangdelu2020
+          dst: ${{ env.DEFAULT_DST }}
+          dst_key: ${{ secrets.UUZ_GITHUB_SSH_KEY }}
+          dst_token: ${{ secrets.UUZ_GITHUB_TOKEN }}
+          static_list: "python,hongliyu"
+          dst_account_type: org
+#           force_update: true
+          rename_dst: true
+          rename_fmt: ${{ env.DEFAULT_RENAME_FMT }}
+
+      - name: mirror github/id77
+        uses: fakedon/hub-mirror-action@fakedon
+        with:
+          src: github/id77
+          dst: ${{ env.DEFAULT_DST }}
+          dst_key: ${{ secrets.UUZ_GITHUB_SSH_KEY }}
+          dst_token: ${{ secrets.UUZ_GITHUB_TOKEN }}
+          static_list: "QuantumultX"
+          dst_account_type: org
+#           force_update: true
+          rename_dst: true
+          rename_fmt: ${{ env.DEFAULT_RENAME_FMT }}
+
+      - name: mirror github/iosrule-hub
+        uses: fakedon/hub-mirror-action@fakedon
+        with:
+          src: github/iosrule-hub
+          dst: ${{ env.DEFAULT_DST }}
+          dst_key: ${{ secrets.UUZ_GITHUB_SSH_KEY }}
+          dst_token: ${{ secrets.UUZ_GITHUB_TOKEN }}
+          static_list: "Gongzhonghao-iosrule"
+          dst_account_type: org
+#           force_update: true
+          rename_dst: true
+          rename_fmt: ${{ env.DEFAULT_RENAME_FMT }}
+
+      - name: mirror github/littlecodersh
+        uses: fakedon/hub-mirror-action@fakedon
+        with:
+          src: github/littlecodersh
+          dst: ${{ env.DEFAULT_DST }}
+          dst_key: ${{ secrets.UUZ_GITHUB_SSH_KEY }}
+          dst_token: ${{ secrets.UUZ_GITHUB_TOKEN }}
+          static_list: "EasierLife"
+          dst_account_type: org
+#           force_update: true
+          rename_dst: true
+          rename_fmt: ${{ env.DEFAULT_RENAME_FMT }}
+
+      - name: mirror github/ziye12
+        uses: fakedon/hub-mirror-action@fakedon
+        with:
+          src: github/ziye12
+          dst: ${{ env.DEFAULT_DST }}
+          dst_key: ${{ secrets.UUZ_GITHUB_SSH_KEY }}
+          dst_token: ${{ secrets.UUZ_GITHUB_TOKEN }}
+          static_list: "JavaScript"
+          dst_account_type: org
+#           force_update: true
+          rename_dst: true
+          rename_fmt: ${{ env.DEFAULT_RENAME_FMT }}
+
+      - name: mirror github/ZhiYi-N
+        uses: fakedon/hub-mirror-action@fakedon
+        with:
+          src: github/ZhiYi-N
+          dst: ${{ env.DEFAULT_DST }}
+          dst_key: ${{ secrets.UUZ_GITHUB_SSH_KEY }}
+          dst_token: ${{ secrets.UUZ_GITHUB_TOKEN }}
+          static_list: "script,Private-Script"
+          dst_account_type: org
+#           force_update: true
+          rename_dst: true
+          rename_fmt: ${{ env.DEFAULT_RENAME_FMT }}
+
+      - name: mirror github/nzw9314
+        uses: fakedon/hub-mirror-action@fakedon
+        with:
+          src: github/nzw9314
+          dst: ${{ env.DEFAULT_DST }}
+          dst_key: ${{ secrets.UUZ_GITHUB_SSH_KEY }}
+          dst_token: ${{ secrets.UUZ_GITHUB_TOKEN }}
+          static_list: "QuantumultX,Actions,Surge"
+          dst_account_type: org
+#           force_update: true
+          rename_dst: true
+          rename_fmt: ${{ env.DEFAULT_RENAME_FMT }}
+
+      - name: mirror github/DivineEngine
+        uses: fakedon/hub-mirror-action@fakedon
+        with:
+          src: github/DivineEngine
+          dst: ${{ env.DEFAULT_DST }}
+          dst_key: ${{ secrets.UUZ_GITHUB_SSH_KEY }}
+          dst_token: ${{ secrets.UUZ_GITHUB_TOKEN }}
+          static_list: "Profiles"
+          dst_account_type: org
+#           force_update: true
+          rename_dst: true
+          rename_fmt: ${{ env.DEFAULT_RENAME_FMT }}
+
+      - name: mirror github/iisams
+        uses: fakedon/hub-mirror-action@fakedon
+        with:
+          src: github/iisams
+          dst: ${{ env.DEFAULT_DST }}
+          dst_key: ${{ secrets.UUZ_GITHUB_SSH_KEY }}
+          dst_token: ${{ secrets.UUZ_GITHUB_TOKEN }}
+          static_list: "Scripts"
+          dst_account_type: org
+#           force_update: true
+          rename_dst: true
+          rename_fmt: ${{ env.DEFAULT_RENAME_FMT }}
+
+      - name: mirror github/MoPoQAQ
+        uses: fakedon/hub-mirror-action@fakedon
+        with:
+          src: github/MoPoQAQ
+          dst: ${{ env.DEFAULT_DST }}
+          dst_key: ${{ secrets.UUZ_GITHUB_SSH_KEY }}
+          dst_token: ${{ secrets.UUZ_GITHUB_TOKEN }}
+#           white_list: "Script"
+          static_list: "Script"
+          dst_account_type: org
+#           force_update: true
+          rename_dst: true
+          rename_fmt: ${{ env.DEFAULT_RENAME_FMT }}
+#           debug: true
+
+      - name: mirror github/TNanko
+        uses: fakedon/hub-mirror-action@fakedon
+        with:
+          src: github/TNanko
+          dst: ${{ env.DEFAULT_DST }}
+          dst_key: ${{ secrets.UUZ_GITHUB_SSH_KEY }}
+          dst_token: ${{ secrets.UUZ_GITHUB_TOKEN }}
+          static_list: "Scripts"
+          dst_account_type: org
+#           force_update: true
+          rename_dst: true
+          rename_fmt: ${{ env.DEFAULT_RENAME_FMT }}
+
+      - name: mirror github/x1iu
+        uses: fakedon/hub-mirror-action@fakedon
+        with:
+          src: github/x1iu
+          dst: ${{ env.DEFAULT_DST }}
+          dst_key: ${{ secrets.UUZ_GITHUB_SSH_KEY }}
+          dst_token: ${{ secrets.UUZ_GITHUB_TOKEN }}
+          static_list: "jd_scripts"
+          dst_account_type: org
+#           force_update: true
+          rename_dst: true
+          rename_fmt: ${{ env.DEFAULT_RENAME_FMT }}
+
+      - name: mirror github/shylocks
+        uses: fakedon/hub-mirror-action@fakedon
+        with:
+          src: github/shylocks
+          dst: ${{ env.DEFAULT_DST }}
+          dst_key: ${{ secrets.UUZ_GITHUB_SSH_KEY }}
+          dst_token: ${{ secrets.UUZ_GITHUB_TOKEN }}
+          static_list: "Loon,updateTeam"
+          dst_account_type: org
+#           force_update: true
+          rename_dst: true
+          rename_fmt: ${{ env.DEFAULT_RENAME_FMT }}
