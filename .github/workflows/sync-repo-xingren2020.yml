@@ -70,6 +70,76 @@ jobs:
           # clone_style: https
           rename_fmt: ${{ env.DEFAULT_RENAME_FMT }}
 
+      - name: mirror github/myouhi
+        uses: fakedon/hub-mirror-action@fakedon
+        with:
+          src: github/myouhi
+          dst: ${{ env.DEFAULT_DST }}
+          dst_key: ${{ secrets.UUZ_GITHUB_SSH_KEY }}
+          dst_token: ${{ secrets.UUZ_GITHUB_TOKEN }}
+          static_list: "QuantumultX,QuantumultX-1"
+          dst_account_type: user
+#           force_update: true
+          rename_dst: true
+          # clone_style: https
+          rename_fmt: ${{ env.DEFAULT_RENAME_FMT }}
+
+      - name: mirror github/YM1099
+        uses: fakedon/hub-mirror-action@fakedon
+        with:
+          src: github/YM1099
+          dst: ${{ env.DEFAULT_DST }}
+          dst_key: ${{ secrets.UUZ_GITHUB_SSH_KEY }}
+          dst_token: ${{ secrets.UUZ_GITHUB_TOKEN }}
+          static_list: "Actions_checkin"
+          dst_account_type: user
+#           force_update: true
+          rename_dst: true
+          # clone_style: https
+          rename_fmt: ${{ env.DEFAULT_RENAME_FMT }}
+
+      - name: mirror github/moposmall
+        uses: fakedon/hub-mirror-action@fakedon
+        with:
+          src: github/moposmall
+          dst: ${{ env.DEFAULT_DST }}
+          dst_key: ${{ secrets.UUZ_GITHUB_SSH_KEY }}
+          dst_token: ${{ secrets.UUZ_GITHUB_TOKEN }}
+          static_list: "Script"
+          dst_account_type: user
+#           force_update: true
+          rename_dst: true
+          # clone_style: https
+          rename_fmt: ${{ env.DEFAULT_RENAME_FMT }}
+
+      - name: mirror github/Sam139
+        uses: fakedon/hub-mirror-action@fakedon
+        with:
+          src: github/Sam139
+          dst: ${{ env.DEFAULT_DST }}
+          dst_key: ${{ secrets.UUZ_GITHUB_SSH_KEY }}
+          dst_token: ${{ secrets.UUZ_GITHUB_TOKEN }}
+          static_list: "Myself,jd_scripts-1"
+          dst_account_type: user
+#           force_update: true
+          rename_dst: true
+          # clone_style: https
+          rename_fmt: ${{ env.DEFAULT_RENAME_FMT }}
+
+      - name: mirror github/SamWu129
+        uses: fakedon/hub-mirror-action@fakedon
+        with:
+          src: github/SamWu129
+          dst: ${{ env.DEFAULT_DST }}
+          dst_key: ${{ secrets.UUZ_GITHUB_SSH_KEY }}
+          dst_token: ${{ secrets.UUZ_GITHUB_TOKEN }}
+          static_list: "Js202012,webhook_execute,Py202012"
+          dst_account_type: user
+#           force_update: true
+          rename_dst: true
+          # clone_style: https
+          rename_fmt: ${{ env.DEFAULT_RENAME_FMT }}
+
       - name: mirror github/Sitoi
         uses: fakedon/hub-mirror-action@fakedon
         with:
@@ -83,3 +153,7 @@ jobs:
           rename_dst: true
           # clone_style: https
           rename_fmt: ${{ env.DEFAULT_RENAME_FMT }}
+
+
+
+
