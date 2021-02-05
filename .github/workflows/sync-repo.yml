@@ -36,7 +36,7 @@ jobs:
           dst_key: ${{ secrets.UUZ_GITHUB_SSH_KEY }}
           dst_token: ${{ secrets.UUZ_GITHUB_TOKEN }}
           static_list: "jd_scripts"
-          dst_account_type: org
+          dst_account_type: user
 #           force_update: true
           rename_dst: true
           # clone_style: https
@@ -50,7 +50,7 @@ jobs:
           dst_key: ${{ secrets.UUZ_GITHUB_SSH_KEY }}
           dst_token: ${{ secrets.UUZ_GITHUB_TOKEN }}
           static_list: "jd_scripts,updateTeam"
-          dst_account_type: org
+          dst_account_type: user
 #           force_update: true
           rename_dst: true
           # clone_style: https
@@ -63,8 +63,8 @@ jobs:
           dst: ${{ env.DEFAULT_DST }}
           dst_key: ${{ secrets.UUZ_GITHUB_SSH_KEY }}
           dst_token: ${{ secrets.UUZ_GITHUB_TOKEN }}
-          static_list: "scripts,jd_scripts"
-          dst_account_type: org
+          static_list: "updateTeam,jd_scripts"
+          dst_account_type: user
 #           force_update: true
           rename_dst: true
           # clone_style: https
@@ -78,7 +78,7 @@ jobs:
           dst_key: ${{ secrets.UUZ_GITHUB_SSH_KEY }}
           dst_token: ${{ secrets.UUZ_GITHUB_TOKEN }}
           static_list: "xmly_speed,JD_tools"
-          dst_account_type: org
+          dst_account_type: user
 #           force_update: true
           rename_dst: true
           rename_fmt: ${{ env.DEFAULT_RENAME_FMT }}
@@ -91,7 +91,7 @@ jobs:
           dst_key: ${{ secrets.UUZ_GITHUB_SSH_KEY }}
           dst_token: ${{ secrets.UUZ_GITHUB_TOKEN }}
           static_list: "MyActions" # "MyActions,TaskConfig,Convert"
-          dst_account_type: org
+          dst_account_type: user
 #           force_update: true
           rename_dst: true
           rename_fmt: ${{ env.DEFAULT_RENAME_FMT }}
@@ -104,7 +104,7 @@ jobs:
           dst_key: ${{ secrets.UUZ_GITHUB_SSH_KEY }}
           dst_token: ${{ secrets.UUZ_GITHUB_TOKEN }}
           static_list: "Script"
-          dst_account_type: org
+          dst_account_type: user
 #           force_update: true
           rename_dst: true
           rename_fmt: ${{ env.DEFAULT_RENAME_FMT }}
@@ -117,7 +117,7 @@ jobs:
           dst_key: ${{ secrets.UUZ_GITHUB_SSH_KEY }}
           dst_token: ${{ secrets.UUZ_GITHUB_TOKEN }}
           static_list: "Scripts"
-          dst_account_type: org
+          dst_account_type: user
 #           force_update: true
           rename_dst: true
           rename_fmt: ${{ env.DEFAULT_RENAME_FMT }}
@@ -130,7 +130,7 @@ jobs:
           dst_key: ${{ secrets.UUZ_GITHUB_SSH_KEY }}
           dst_token: ${{ secrets.UUZ_GITHUB_TOKEN }}
           static_list: "scripts"
-          dst_account_type: org
+          dst_account_type: user
 #           force_update: true
           rename_dst: true
           rename_fmt: ${{ env.DEFAULT_RENAME_FMT }}
@@ -143,7 +143,7 @@ jobs:
           dst_key: ${{ secrets.UUZ_GITHUB_SSH_KEY }}
           dst_token: ${{ secrets.UUZ_GITHUB_TOKEN }}
           static_list: "For-own-use,Loon-Script,Surge-Script,Shadowrocket-Script,QuantumultX-Script,Script"
-          dst_account_type: org
+          dst_account_type: user
 #           force_update: true
           rename_dst: true
           rename_fmt: ${{ env.DEFAULT_RENAME_FMT }}
@@ -156,7 +156,7 @@ jobs:
           dst_key: ${{ secrets.UUZ_GITHUB_SSH_KEY }}
           dst_token: ${{ secrets.UUZ_GITHUB_TOKEN }}
           static_list: "CheckinBox"
-          dst_account_type: org
+          dst_account_type: user
 #           force_update: true
           rename_dst: true
           rename_fmt: ${{ env.DEFAULT_RENAME_FMT }}
@@ -169,7 +169,7 @@ jobs:
           dst_key: ${{ secrets.UUZ_GITHUB_SSH_KEY }}
           dst_token: ${{ secrets.UUZ_GITHUB_TOKEN }}
           static_list: "My-Actions"
-          dst_account_type: org
+          dst_account_type: user
 #           force_update: true
           rename_dst: true
           rename_fmt: ${{ env.DEFAULT_RENAME_FMT }}
@@ -182,7 +182,7 @@ jobs:
           dst_key: ${{ secrets.UUZ_GITHUB_SSH_KEY }}
           dst_token: ${{ secrets.UUZ_GITHUB_TOKEN }}
           static_list: "Task"
-          dst_account_type: org
+          dst_account_type: user
 #           force_update: true
           rename_dst: true
           rename_fmt: ${{ env.DEFAULT_RENAME_FMT }}
@@ -195,7 +195,7 @@ jobs:
           dst_key: ${{ secrets.UUZ_GITHUB_SSH_KEY }}
           dst_token: ${{ secrets.UUZ_GITHUB_TOKEN }}
           static_list: "lazy_script"
-          dst_account_type: org
+          dst_account_type: user
 #           force_update: true
           rename_dst: true
           rename_fmt: ${{ env.DEFAULT_RENAME_FMT }}
@@ -208,7 +208,7 @@ jobs:
           dst_key: ${{ secrets.UUZ_GITHUB_SSH_KEY }}
           dst_token: ${{ secrets.UUZ_GITHUB_TOKEN }}
           static_list: "jd-helper"
-          dst_account_type: org
+          dst_account_type: user
 #           force_update: true
           rename_dst: true
           rename_fmt: ${{ env.DEFAULT_RENAME_FMT }}
@@ -221,7 +221,7 @@ jobs:
           dst_key: ${{ secrets.UUZ_GITHUB_SSH_KEY }}
           dst_token: ${{ secrets.UUZ_GITHUB_TOKEN }}
           static_list: "Quantumult-X"
-          dst_account_type: org
+          dst_account_type: user
 #           force_update: true
           rename_dst: true
           rename_fmt: ${{ env.DEFAULT_RENAME_FMT }}
@@ -234,7 +234,7 @@ jobs:
           dst_key: ${{ secrets.UUZ_GITHUB_SSH_KEY }}
           dst_token: ${{ secrets.UUZ_GITHUB_TOKEN }}
           static_list: "jscool"
-          dst_account_type: org
+          dst_account_type: user
 #           force_update: true
           rename_dst: true
           rename_fmt: ${{ env.DEFAULT_RENAME_FMT }}
@@ -247,7 +247,7 @@ jobs:
           dst_key: ${{ secrets.UUZ_GITHUB_SSH_KEY }}
           dst_token: ${{ secrets.UUZ_GITHUB_TOKEN }}
           static_list: "AutoWatch"
-          dst_account_type: org
+          dst_account_type: user
 #           force_update: true
           rename_dst: true
           rename_fmt: ${{ env.DEFAULT_RENAME_FMT }}
@@ -260,7 +260,7 @@ jobs:
           dst_key: ${{ secrets.UUZ_GITHUB_SSH_KEY }}
           dst_token: ${{ secrets.UUZ_GITHUB_TOKEN }}
           static_list: "QuantumultX"
-          dst_account_type: org
+          dst_account_type: user
 #           force_update: true
           rename_dst: true
           rename_fmt: ${{ env.DEFAULT_RENAME_FMT }}
@@ -273,7 +273,7 @@ jobs:
           dst_key: ${{ secrets.UUZ_GITHUB_SSH_KEY }}
           dst_token: ${{ secrets.UUZ_GITHUB_TOKEN }}
           static_list: "hundun"
-          dst_account_type: org
+          dst_account_type: user
 #           force_update: true
           rename_dst: true
           rename_fmt: ${{ env.DEFAULT_RENAME_FMT }}
@@ -286,7 +286,7 @@ jobs:
           dst_key: ${{ secrets.UUZ_GITHUB_SSH_KEY }}
           dst_token: ${{ secrets.UUZ_GITHUB_TOKEN }}
           static_list: "ios_rule_script"
-          dst_account_type: org
+          dst_account_type: user
 #           force_update: true
           rename_dst: true
           rename_fmt: ${{ env.DEFAULT_RENAME_FMT }}
@@ -299,7 +299,7 @@ jobs:
           dst_key: ${{ secrets.UUZ_GITHUB_SSH_KEY }}
           dst_token: ${{ secrets.UUZ_GITHUB_TOKEN }}
           static_list: "Script"
-          dst_account_type: org
+          dst_account_type: user
 #           force_update: true
           rename_dst: true
           rename_fmt: ${{ env.DEFAULT_RENAME_FMT }}
@@ -312,7 +312,7 @@ jobs:
           dst_key: ${{ secrets.UUZ_GITHUB_SSH_KEY }}
           dst_token: ${{ secrets.UUZ_GITHUB_TOKEN }}
           static_list: "TaskAction,Cuttlefish,HttpCatcher"
-          dst_account_type: org
+          dst_account_type: user
 #           force_update: true
           rename_dst: true
           rename_fmt: ${{ env.DEFAULT_RENAME_FMT }}
@@ -325,7 +325,7 @@ jobs:
           dst_key: ${{ secrets.UUZ_GITHUB_SSH_KEY }}
           dst_token: ${{ secrets.UUZ_GITHUB_TOKEN }}
           static_list: "2020scripts"
-          dst_account_type: org
+          dst_account_type: user
 #           force_update: true
           rename_dst: true
           rename_fmt: ${{ env.DEFAULT_RENAME_FMT }}
@@ -338,7 +338,7 @@ jobs:
           dst_key: ${{ secrets.UUZ_GITHUB_SSH_KEY }}
           dst_token: ${{ secrets.UUZ_GITHUB_TOKEN }}
           static_list: "QuantumultX-Tools,elecV2P"
-          dst_account_type: org
+          dst_account_type: user
 #           force_update: true
           rename_dst: true
           rename_fmt: ${{ env.DEFAULT_RENAME_FMT }}
@@ -351,7 +351,7 @@ jobs:
           dst_key: ${{ secrets.UUZ_GITHUB_SSH_KEY }}
           dst_token: ${{ secrets.UUZ_GITHUB_TOKEN }}
           static_list: "jd_scripts"
-          dst_account_type: org
+          dst_account_type: user
 #           force_update: true
           rename_dst: true
           rename_fmt: ${{ env.DEFAULT_RENAME_FMT }}
@@ -364,7 +364,7 @@ jobs:
           dst_key: ${{ secrets.UUZ_GITHUB_SSH_KEY }}
           dst_token: ${{ secrets.UUZ_GITHUB_TOKEN }}
           static_list: "Scripting"
-          dst_account_type: org
+          dst_account_type: user
 #           force_update: true
           rename_dst: true
           rename_fmt: ${{ env.DEFAULT_RENAME_FMT }}
@@ -377,7 +377,7 @@ jobs:
           dst_key: ${{ secrets.UUZ_GITHUB_SSH_KEY }}
           dst_token: ${{ secrets.UUZ_GITHUB_TOKEN }}
           static_list: "python,hongliyu"
-          dst_account_type: org
+          dst_account_type: user
 #           force_update: true
           rename_dst: true
           rename_fmt: ${{ env.DEFAULT_RENAME_FMT }}
@@ -390,7 +390,7 @@ jobs:
           dst_key: ${{ secrets.UUZ_GITHUB_SSH_KEY }}
           dst_token: ${{ secrets.UUZ_GITHUB_TOKEN }}
           static_list: "QuantumultX"
-          dst_account_type: org
+          dst_account_type: user
 #           force_update: true
           rename_dst: true
           rename_fmt: ${{ env.DEFAULT_RENAME_FMT }}
@@ -403,7 +403,7 @@ jobs:
           dst_key: ${{ secrets.UUZ_GITHUB_SSH_KEY }}
           dst_token: ${{ secrets.UUZ_GITHUB_TOKEN }}
           static_list: "Gongzhonghao-iosrule"
-          dst_account_type: org
+          dst_account_type: user
 #           force_update: true
           rename_dst: true
           rename_fmt: ${{ env.DEFAULT_RENAME_FMT }}
@@ -416,7 +416,7 @@ jobs:
           dst_key: ${{ secrets.UUZ_GITHUB_SSH_KEY }}
           dst_token: ${{ secrets.UUZ_GITHUB_TOKEN }}
           static_list: "EasierLife"
-          dst_account_type: org
+          dst_account_type: user
 #           force_update: true
           rename_dst: true
           rename_fmt: ${{ env.DEFAULT_RENAME_FMT }}
@@ -429,7 +429,7 @@ jobs:
           dst_key: ${{ secrets.UUZ_GITHUB_SSH_KEY }}
           dst_token: ${{ secrets.UUZ_GITHUB_TOKEN }}
           static_list: "JavaScript"
-          dst_account_type: org
+          dst_account_type: user
 #           force_update: true
           rename_dst: true
           rename_fmt: ${{ env.DEFAULT_RENAME_FMT }}
@@ -442,7 +442,7 @@ jobs:
           dst_key: ${{ secrets.UUZ_GITHUB_SSH_KEY }}
           dst_token: ${{ secrets.UUZ_GITHUB_TOKEN }}
           static_list: "script,Private-Script"
-          dst_account_type: org
+          dst_account_type: user
 #           force_update: true
           rename_dst: true
           rename_fmt: ${{ env.DEFAULT_RENAME_FMT }}
@@ -455,7 +455,7 @@ jobs:
           dst_key: ${{ secrets.UUZ_GITHUB_SSH_KEY }}
           dst_token: ${{ secrets.UUZ_GITHUB_TOKEN }}
           static_list: "QuantumultX,Actions,Surge"
-          dst_account_type: org
+          dst_account_type: user
 #           force_update: true
           rename_dst: true
           rename_fmt: ${{ env.DEFAULT_RENAME_FMT }}
@@ -468,7 +468,7 @@ jobs:
           dst_key: ${{ secrets.UUZ_GITHUB_SSH_KEY }}
           dst_token: ${{ secrets.UUZ_GITHUB_TOKEN }}
           static_list: "Profiles"
-          dst_account_type: org
+          dst_account_type: user
 #           force_update: true
           rename_dst: true
           rename_fmt: ${{ env.DEFAULT_RENAME_FMT }}
@@ -481,7 +481,7 @@ jobs:
           dst_key: ${{ secrets.UUZ_GITHUB_SSH_KEY }}
           dst_token: ${{ secrets.UUZ_GITHUB_TOKEN }}
           static_list: "Scripts"
-          dst_account_type: org
+          dst_account_type: user
 #           force_update: true
           rename_dst: true
           rename_fmt: ${{ env.DEFAULT_RENAME_FMT }}
@@ -495,7 +495,7 @@ jobs:
           dst_token: ${{ secrets.UUZ_GITHUB_TOKEN }}
 #           white_list: "Script"
           static_list: "Script"
-          dst_account_type: org
+          dst_account_type: user
 #           force_update: true
           rename_dst: true
           rename_fmt: ${{ env.DEFAULT_RENAME_FMT }}
@@ -509,7 +509,7 @@ jobs:
           dst_key: ${{ secrets.UUZ_GITHUB_SSH_KEY }}
           dst_token: ${{ secrets.UUZ_GITHUB_TOKEN }}
           static_list: "Scripts"
-          dst_account_type: org
+          dst_account_type: user
 #           force_update: true
           rename_dst: true
           rename_fmt: ${{ env.DEFAULT_RENAME_FMT }}
@@ -522,7 +522,7 @@ jobs:
           dst_key: ${{ secrets.UUZ_GITHUB_SSH_KEY }}
           dst_token: ${{ secrets.UUZ_GITHUB_TOKEN }}
           static_list: "jd_scripts"
-          dst_account_type: org
+          dst_account_type: user
 #           force_update: true
           rename_dst: true
           rename_fmt: ${{ env.DEFAULT_RENAME_FMT }}
@@ -535,7 +535,7 @@ jobs:
           dst_key: ${{ secrets.UUZ_GITHUB_SSH_KEY }}
           dst_token: ${{ secrets.UUZ_GITHUB_TOKEN }}
           static_list: "Loon,updateTeam"
-          dst_account_type: org
+          dst_account_type: user
 #           force_update: true
           rename_dst: true
           rename_fmt: ${{ env.DEFAULT_RENAME_FMT }}
