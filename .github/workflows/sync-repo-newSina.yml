@@ -71,6 +71,20 @@ jobs:
           # clone_style: https
           rename_fmt: ${{ env.DEFAULT_RENAME_FMT }}
   
+      - name: mirror github/whyour
+        uses: fakedon/hub-mirror-action@fakedon
+        with:
+          src: github/whyour
+          dst: ${{ env.DEFAULT_DST }}
+          dst_key: ${{ secrets.NSINA_GITHUB_SSH_KEY }}
+          dst_token: ${{ secrets.NSINA_GITHUB_TOKEN }}
+          static_list: "hundun"
+          dst_account_type: user
+#           force_update: true
+          rename_dst: true
+          # clone_style: https
+          rename_fmt: ${{ env.DEFAULT_RENAME_FMT }}
+   
 #       - name: mirror github/age174
 #         uses: fakedon/hub-mirror-action@fakedon
 #         with:
@@ -84,6 +98,11 @@ jobs:
 #           rename_dst: true
 #           # clone_style: https
 #           rename_fmt: ${{ env.DEFAULT_RENAME_FMT }}
+   
+   
+   
+   
+   
    
    
    
