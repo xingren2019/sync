@@ -57,6 +57,40 @@ jobs:
           # clone_style: https
           rename_fmt: ${{ env.DEFAULT_RENAME_FMT }}
 
+      - name: mirror github/pxylen
+        uses: fakedon/hub-mirror-action@fakedon
+        with:
+          src: github/pxylen
+          dst: ${{ env.DEFAULT_DST }}
+          dst_key: ${{ secrets.NSINA_GITHUB_SSH_KEY }}
+          dst_token: ${{ secrets.NSINA_GITHUB_TOKEN }}
+          static_list: "Task,SelfTask"
+          dst_account_type: user
+#           force_update: true
+          rename_dst: true
+          # clone_style: https
+          rename_fmt: ${{ env.DEFAULT_RENAME_FMT }}
+  
+      - name: mirror github/age174
+        uses: fakedon/hub-mirror-action@fakedon
+        with:
+          src: github/age174
+          dst: ${{ env.DEFAULT_DST }}
+          dst_key: ${{ secrets.NSINA_GITHUB_SSH_KEY }}
+          dst_token: ${{ secrets.NSINA_GITHUB_TOKEN }}
+          static_list: "-"
+          dst_account_type: user
+#           force_update: true
+          rename_dst: true
+          # clone_style: https
+          rename_fmt: ${{ env.DEFAULT_RENAME_FMT }}
+   
+   
+   
+
+
+
+
 
 
 
