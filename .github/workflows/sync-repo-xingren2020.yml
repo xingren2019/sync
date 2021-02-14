@@ -154,6 +154,94 @@ jobs:
           # clone_style: https
           rename_fmt: ${{ env.DEFAULT_RENAME_FMT }}
 
+      - name: mirror github/jd1994527314
+        uses: fakedon/hub-mirror-action@fakedon
+        with:
+          src: github/jd1994527314
+          dst: ${{ env.DEFAULT_DST }}
+          dst_key: ${{ secrets.UUZ_GITHUB_SSH_KEY }}
+          dst_token: ${{ secrets.UUZ_GITHUB_TOKEN }}
+          static_list: "iosrule,iosrule2021"
+          dst_account_type: user
+#           force_update: true
+          rename_dst: true
+          # clone_style: https
+          rename_fmt: ${{ env.DEFAULT_RENAME_FMT }}
+
+      - name: mirror github/1518936683
+        uses: fakedon/hub-mirror-action@fakedon
+        with:
+          src: github/1518936683
+          dst: ${{ env.DEFAULT_DST }}
+          dst_key: ${{ secrets.UUZ_GITHUB_SSH_KEY }}
+          dst_token: ${{ secrets.UUZ_GITHUB_TOKEN }}
+          static_list: "hub"
+          dst_account_type: user
+#           force_update: true
+          rename_dst: true
+          # clone_style: https
+          rename_fmt: ${{ env.DEFAULT_RENAME_FMT }}
+
+      - name: mirror github/wangdelu2020
+        uses: fakedon/hub-mirror-action@fakedon
+        with:
+          src: github/wangdelu2020
+          dst: ${{ env.DEFAULT_DST }}
+          dst_key: ${{ secrets.UUZ_GITHUB_SSH_KEY }}
+          dst_token: ${{ secrets.UUZ_GITHUB_TOKEN }}
+          static_list: "hongliyu,python"
+          dst_account_type: user
+#           force_update: true
+          rename_dst: true
+          # clone_style: https
+          rename_fmt: ${{ env.DEFAULT_RENAME_FMT }}
+
+      - name: mirror github/iosrule-hub
+        uses: fakedon/hub-mirror-action@fakedon
+        with:
+          src: github/iosrule-hub
+          dst: ${{ env.DEFAULT_DST }}
+          dst_key: ${{ secrets.UUZ_GITHUB_SSH_KEY }}
+          dst_token: ${{ secrets.UUZ_GITHUB_TOKEN }}
+          static_list: "iosrule2021"
+          dst_account_type: user
+#           force_update: true
+          rename_dst: true
+          # clone_style: https
+          rename_fmt: ${{ env.DEFAULT_RENAME_FMT }}
+
+      - name: mirror github/andyzys
+        uses: fakedon/hub-mirror-action@fakedon
+        with:
+          src: github/andyzys
+          dst: ${{ env.DEFAULT_DST }}
+          dst_key: ${{ secrets.UUZ_GITHUB_SSH_KEY }}
+          dst_token: ${{ secrets.UUZ_GITHUB_TOKEN }}
+          static_list: "jd_seckill"
+          dst_account_type: user
+#           force_update: true
+          rename_dst: true
+          # clone_style: https
+          rename_fmt: ${{ env.DEFAULT_RENAME_FMT }}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
