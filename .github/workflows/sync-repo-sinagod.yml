@@ -79,11 +79,81 @@ jobs:
           dst_token: ${{ secrets.UUZ_GITHUB_TOKEN }}
           static_list: "BiliExp"
           dst_account_type: user
-#           force_update: true
+          force_update: true
           rename_dst: true
           # clone_style: https
           rename_fmt: ${{ env.DEFAULT_RENAME_FMT }} 
      
+      - name: mirror github/nzw9314
+        uses: fakedon/hub-mirror-action@fakedon
+        with:
+          src: github/nzw9314
+          dst: ${{ env.DEFAULT_DST }}
+          dst_key: ${{ secrets.NSINA_GITHUB_SSH_KEY }}
+          dst_token: ${{ secrets.NSINA_GITHUB_TOKEN }}
+          static_list: "QuantumultX,Loon,Surge"
+          dst_account_type: user
+          force_update: true
+          rename_dst: true
+          # clone_style: https
+          rename_fmt: ${{ env.DEFAULT_RENAME_FMT }}
+
+      - name: mirror github/w37fhy
+        uses: fakedon/hub-mirror-action@fakedon
+        with:
+          src: github/w37fhy
+          dst: ${{ env.DEFAULT_DST }}
+          dst_key: ${{ secrets.NSINA_GITHUB_SSH_KEY }}
+          dst_token: ${{ secrets.NSINA_GITHUB_TOKEN }}
+          static_list: "QuantumultX"
+          dst_account_type: user
+          force_update: true
+          rename_dst: true
+          # clone_style: https
+          rename_fmt: ${{ env.DEFAULT_RENAME_FMT }}
+
+      - name: mirror github/myouhi
+        uses: fakedon/hub-mirror-action@fakedon
+        with:
+          src: github/myouhi
+          dst: ${{ env.DEFAULT_DST }}
+          dst_key: ${{ secrets.NSINA_GITHUB_SSH_KEY }}
+          dst_token: ${{ secrets.NSINA_GITHUB_TOKEN }}
+          static_list: "QuantumultX"
+          dst_account_type: user
+          force_update: true
+          rename_dst: true
+          # clone_style: https
+          rename_fmt: ${{ env.DEFAULT_RENAME_FMT }}
+
+      - name: mirror github/ZhiYi-N
+        uses: fakedon/hub-mirror-action@fakedon
+        with:
+          src: github/ZhiYi-N
+          dst: ${{ env.DEFAULT_DST }}
+          dst_key: ${{ secrets.UUZ_GITHUB_SSH_KEY }}
+          dst_token: ${{ secrets.UUZ_GITHUB_TOKEN }}
+          static_list: "Private-Script,script"
+          dst_account_type: user
+          force_update: true
+          rename_dst: true
+          # clone_style: https
+          rename_fmt: ${{ env.DEFAULT_RENAME_FMT }}
+
+#       - name: mirror github/Sitoi
+#         uses: fakedon/hub-mirror-action@fakedon
+#         with:
+#           src: github/Sitoi
+#           dst: ${{ env.DEFAULT_DST }}
+#           dst_key: ${{ secrets.UUZ_GITHUB_SSH_KEY }}
+#           dst_token: ${{ secrets.UUZ_GITHUB_TOKEN }}
+#           static_list: "dailycheckin"
+#           dst_account_type: user
+# #           force_update: true
+#           rename_dst: true
+#           # clone_style: https
+#           rename_fmt: ${{ env.DEFAULT_RENAME_FMT }}
+
 #       - name: mirror github/Sitoi
 #         uses: fakedon/hub-mirror-action@fakedon
 #         with:
