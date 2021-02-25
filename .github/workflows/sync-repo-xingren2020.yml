@@ -135,7 +135,7 @@ jobs:
           dst_token: ${{ secrets.UUZ_GITHUB_TOKEN }}
           static_list: "Js202012,webhook_execute,Py202012"
           dst_account_type: user
-#           force_update: true
+          force_update: true
           rename_dst: true
           # clone_style: https
           rename_fmt: ${{ env.DEFAULT_RENAME_FMT }}
