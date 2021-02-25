@@ -29,33 +29,33 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-cache-actions
 
-      - name: mirror github/ziye12
-        uses: fakedon/hub-mirror-action@fakedon
-        with:
-          src: github/ziye12
-          dst: ${{ env.DEFAULT_DST }}
-          dst_key: ${{ secrets.NSINA_GITHUB_SSH_KEY }}
-          dst_token: ${{ secrets.NSINA_GITHUB_TOKEN }}
-          static_list: "JavaScript"
-          dst_account_type: user
-#           force_update: true
-          rename_dst: true
-          # clone_style: https
-          rename_fmt: ${{ env.DEFAULT_RENAME_FMT }}
+#       - name: mirror github/ziye12
+#         uses: fakedon/hub-mirror-action@fakedon
+#         with:
+#           src: github/ziye12
+#           dst: ${{ env.DEFAULT_DST }}
+#           dst_key: ${{ secrets.NSINA_GITHUB_SSH_KEY }}
+#           dst_token: ${{ secrets.NSINA_GITHUB_TOKEN }}
+#           static_list: "JavaScript"
+#           dst_account_type: user
+# #           force_update: true
+#           rename_dst: true
+#           # clone_style: https
+#           rename_fmt: ${{ env.DEFAULT_RENAME_FMT }}
 
-      - name: mirror gitee/lxk0301
-        uses: fakedon/hub-mirror-action@fakedon
-        with:
-          src: gitee/lxk0301
-          dst: ${{ env.DEFAULT_DST }}
-          dst_key: ${{ secrets.NSINA_GITHUB_SSH_KEY }}
-          dst_token: ${{ secrets.NSINA_GITHUB_TOKEN }}
-          static_list: "updateTeam,jd_scripts"
-          dst_account_type: user
-#           force_update: true
-          rename_dst: true
-          # clone_style: https
-          rename_fmt: ${{ env.DEFAULT_RENAME_FMT }}
+#       - name: mirror gitee/lxk0301
+#         uses: fakedon/hub-mirror-action@fakedon
+#         with:
+#           src: gitee/lxk0301
+#           dst: ${{ env.DEFAULT_DST }}
+#           dst_key: ${{ secrets.NSINA_GITHUB_SSH_KEY }}
+#           dst_token: ${{ secrets.NSINA_GITHUB_TOKEN }}
+#           static_list: "updateTeam,jd_scripts"
+#           dst_account_type: user
+# #           force_update: true
+#           rename_dst: true
+#           # clone_style: https
+#           rename_fmt: ${{ env.DEFAULT_RENAME_FMT }}
 
       - name: mirror github/pxylen
         uses: fakedon/hub-mirror-action@fakedon
@@ -85,33 +85,33 @@ jobs:
           # clone_style: https
           rename_fmt: ${{ env.DEFAULT_RENAME_FMT }}
       
-      - name: mirror github/canghaiyishengxiao2021
-        uses: fakedon/hub-mirror-action@fakedon
-        with:
-          src: github/canghaiyishengxiao2021
-          dst: ${{ env.DEFAULT_DST }}
-          dst_key: ${{ secrets.NSINA_GITHUB_SSH_KEY }}
-          dst_token: ${{ secrets.NSINA_GITHUB_TOKEN }}
-          static_list: "dadonggua"
-          dst_account_type: user
-          force_update: true
-          rename_dst: true
-          # clone_style: https
-          rename_fmt: ${{ env.DEFAULT_RENAME_FMT }}
+#       - name: mirror github/canghaiyishengxiao2021
+#         uses: fakedon/hub-mirror-action@fakedon
+#         with:
+#           src: github/canghaiyishengxiao2021
+#           dst: ${{ env.DEFAULT_DST }}
+#           dst_key: ${{ secrets.NSINA_GITHUB_SSH_KEY }}
+#           dst_token: ${{ secrets.NSINA_GITHUB_TOKEN }}
+#           static_list: "dadonggua"
+#           dst_account_type: user
+#           force_update: true
+#           rename_dst: true
+#           # clone_style: https
+#           rename_fmt: ${{ env.DEFAULT_RENAME_FMT }}
    
-      - name: mirror github/dajijiyangmao
-        uses: fakedon/hub-mirror-action@fakedon
-        with:
-          src: github/dajijiyangmao
-          dst: ${{ env.DEFAULT_DST }}
-          dst_key: ${{ secrets.NSINA_GITHUB_SSH_KEY }}
-          dst_token: ${{ secrets.NSINA_GITHUB_TOKEN }}
-          static_list: "UFO"
-          dst_account_type: user
-          force_update: true
-          rename_dst: true
-          # clone_style: https
-          rename_fmt: ${{ env.DEFAULT_RENAME_FMT }}
+#       - name: mirror github/dajijiyangmao
+#         uses: fakedon/hub-mirror-action@fakedon
+#         with:
+#           src: github/dajijiyangmao
+#           dst: ${{ env.DEFAULT_DST }}
+#           dst_key: ${{ secrets.NSINA_GITHUB_SSH_KEY }}
+#           dst_token: ${{ secrets.NSINA_GITHUB_TOKEN }}
+#           static_list: "UFO"
+#           dst_account_type: user
+#           force_update: true
+#           rename_dst: true
+#           # clone_style: https
+#           rename_fmt: ${{ env.DEFAULT_RENAME_FMT }}
    
       
       - name: mirror github/ztxtop
