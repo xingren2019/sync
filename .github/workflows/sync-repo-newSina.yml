@@ -29,19 +29,34 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-cache-actions
 
-      - name: mirror github/ziye11
+      - name: mirror gitee/ziye12
         uses: fakedon/hub-mirror-action@fakedon
         with:
-          src: github/ziye11
+          src: gitee/ziye12
           dst: ${{ env.DEFAULT_DST }}
           dst_key: ${{ secrets.NSINA_GITHUB_SSH_KEY }}
           dst_token: ${{ secrets.NSINA_GITHUB_TOKEN }}
-          static_list: "JavaScriptss,JavaScript"
+          static_list: "Javascript"
           dst_account_type: user
-          force_update: true
+#           force_update: true
           rename_dst: true
           # clone_style: https
           rename_fmt: ${{ env.DEFAULT_RENAME_FMT }}
+
+
+#       - name: mirror github/ziye11
+#         uses: fakedon/hub-mirror-action@fakedon
+#         with:
+#           src: github/ziye11
+#           dst: ${{ env.DEFAULT_DST }}
+#           dst_key: ${{ secrets.NSINA_GITHUB_SSH_KEY }}
+#           dst_token: ${{ secrets.NSINA_GITHUB_TOKEN }}
+#           static_list: "JavaScriptss,JavaScript"
+#           dst_account_type: user
+#           force_update: true
+#           rename_dst: true
+#           # clone_style: https
+#           rename_fmt: ${{ env.DEFAULT_RENAME_FMT }}
 
 
 #       - name: mirror github/ziye12
