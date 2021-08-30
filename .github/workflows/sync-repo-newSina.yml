@@ -29,19 +29,19 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-cache-actions
 
-#       - name: mirror gitee/ziye12
-#         uses: fakedon/hub-mirror-action@fakedon
-#         with:
-#           src: gitee/ziye12
-#           dst: ${{ env.DEFAULT_DST }}
-#           dst_key: ${{ secrets.NSINA_GITHUB_SSH_KEY }}
-#           dst_token: ${{ secrets.NSINA_GITHUB_TOKEN }}
-#           static_list: "JavaScript"
-#           dst_account_type: user
-#           force_update: true
-#           rename_dst: true
-#           # clone_style: https
-#           rename_fmt: ${{ env.DEFAULT_RENAME_FMT }}
+      - name: mirror github/ClassmateLin
+        uses: fakedon/hub-mirror-action@fakedon
+        with:
+          src: github/ClassmateLin
+          dst: ${{ env.DEFAULT_DST }}
+          dst_key: ${{ secrets.NSINA_GITHUB_SSH_KEY }}
+          dst_token: ${{ secrets.NSINA_GITHUB_TOKEN }}
+          static_list: "jd_scripts"
+          dst_account_type: user
+          force_update: true
+          rename_dst: true
+          # clone_style: https
+          rename_fmt: ${{ env.DEFAULT_RENAME_FMT }}
 
 
       - name: mirror github/ziye888
@@ -54,6 +54,20 @@ jobs:
           static_list: "JavaScript"
           dst_account_type: user
           force_update: true
+          rename_dst: true
+          # clone_style: https
+          rename_fmt: ${{ env.DEFAULT_RENAME_FMT }}
+
+      - name: mirror github/Oreomeow
+        uses: fakedon/hub-mirror-action@fakedon
+        with:
+          src: github/Oreomeow
+          dst: ${{ env.DEFAULT_DST }}
+          dst_key: ${{ secrets.NSINA_GITHUB_SSH_KEY }}
+          dst_token: ${{ secrets.NSINA_GITHUB_TOKEN }}
+          static_list: "VIP,checkinpanel,bot,JD_Diy"
+          dst_account_type: user
+#           force_update: true
           rename_dst: true
           # clone_style: https
           rename_fmt: ${{ env.DEFAULT_RENAME_FMT }}
