@@ -38,9 +38,9 @@ jobs:
           static_list: "decodeObfuscator"
           dst_account_type: user
           force_update: true
-          rename_dst: true
+#           rename_dst: true
           clone_style: https
-          #rename_fmt: ${{ env.DEFAULT_RENAME_FMT }}
+#           rename_fmt: ${{ env.DEFAULT_RENAME_FMT }}
       
       
 #       - name: sync github -> gitee
