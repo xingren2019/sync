@@ -2,7 +2,7 @@ name: LouisSina
 
 on:
  schedule:
-   - cron: '* */1 * * *'
+   - cron: '* */30 * * *'
  workflow_dispatch:
  watch:
    types: started
@@ -28,7 +28,7 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-cache-actions
       
-      - name: mirror github/Tsaiboss
+      - name: Tsaiboss
         uses: fakedon/hub-mirror-action@fakedon
         with:
           src: github/Tsaiboss
