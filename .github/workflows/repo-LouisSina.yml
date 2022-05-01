@@ -33,8 +33,8 @@ jobs:
         with:
           src: github/Tsaiboss
           dst: ${{ env.DEFAULT_DST }}
-          dst_key: ${{ secrets.SINA_GITHUB_SSH_KEY }}
-          dst_token: ${{ secrets.SINA_GITHUB_TOKEN }}
+          dst_key: ${{ secrets.LOUIS_GITHUB_SSH_KEY }}
+          dst_token: ${{ secrets.LOUIS_GITHUB_TOKEN }}
           static_list: "decodeObfuscator"
           dst_account_type: user
           force_update: true
