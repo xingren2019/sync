@@ -32,7 +32,7 @@ jobs:
         uses: fakedon/hub-mirror-action@fakedon
         with:
           src: github/Tsaiboss
-          dst: ${{ env.DEFAULT_DST }}
+          #dst: ${{ env.DEFAULT_DST }}
           dst_key: ${{ secrets.LOUIS_GITHUB_SSH_KEY }}
           dst_token: ${{ secrets.LOUIS_GITHUB_TOKEN }}
           static_list: "decodeObfuscator"
@@ -40,7 +40,7 @@ jobs:
           force_update: true
           rename_dst: true
           clone_style: https
-          rename_fmt: ${{ env.DEFAULT_RENAME_FMT }}
+          #rename_fmt: ${{ env.DEFAULT_RENAME_FMT }}
       
       
 #       - name: sync github -> gitee
