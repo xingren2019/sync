@@ -1,0 +1,84 @@
+name: LouisSina
+
+on:
+ schedule:
+   - cron: '* */1 * * *'
+ workflow_dispatch:
+ watch:
+   types: started
+ repository_dispatch:
+   types: LouisSina
+
+jobs:
+  mirror:
+    env:
+      PAT: ${{ secrets.PAT }}
+      DEFAULT_DST: github/LouisSina
+      DEFAULT_RENAME_FMT: 's/(.*)/${SRC_TYPE}_${SRC_ACCOUNT}_\1/g'
+    runs-on: ubuntu-latest
+    if: github.event.repository.owner.id == github.event.sender.id 
+
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/cache@v2
+        with:
+          path: | 
+            "${{ github.workspace }}/.cache"
+          key: ${{ runner.os }}-cache-actions
+          restore-keys: |
+            ${{ runner.os }}-cache-actions
+      
+      - name: mirror github/Tsaiboss
+        uses: fakedon/hub-mirror-action@fakedon
+        with:
+          src: github/Tsaiboss
+          dst: ${{ env.DEFAULT_DST }}
+          dst_key: ${{ secrets.SINA_GITHUB_SSH_KEY }}
+          dst_token: ${{ secrets.SINA_GITHUB_TOKEN }}
+          static_list: "decodeObfuscator"
+          dst_account_type: user
+          force_update: true
+          rename_dst: true
+          clone_style: https
+          rename_fmt: ${{ env.DEFAULT_RENAME_FMT }}
+      
+      
+    //  - name: sync github -> gitee
+    //    uses: Yikun/hub-mirror-action@master
+    //    if: env.dst_key
+    //    with:
+    //      src: github/sinagod
+    //      dst: gitee/the_king_god
+    //      static_list: "github_adwktt_adwktt,github_adwktt_test"
+    //      dst_key: ${{ secrets.GITEE_PRIVATE_KEY }}
+    //      dst_token: ${{ secrets.GITEE_TOKEN }}
+
+     
+
+#       - name: mirror github/Sitoi
+#         uses: fakedon/hub-mirror-action@fakedon
+#         with:
+#           src: github/Sitoi
+#           dst: ${{ env.DEFAULT_DST }}
+#           dst_key: ${{ secrets.UUZ_GITHUB_SSH_KEY }}
+#           dst_token: ${{ secrets.UUZ_GITHUB_TOKEN }}
+#           static_list: "dailycheckin"
+#           dst_account_type: user
+# #           force_update: true
+#           rename_dst: true
+#           # clone_style: https
+#           rename_fmt: ${{ env.DEFAULT_RENAME_FMT }}
+
+#       - name: mirror github/Sitoi
+#         uses: fakedon/hub-mirror-action@fakedon
+#         with:
+#           src: github/Sitoi
+#           dst: ${{ env.DEFAULT_DST }}
+#           dst_key: ${{ secrets.UUZ_GITHUB_SSH_KEY }}
+#           dst_token: ${{ secrets.UUZ_GITHUB_TOKEN }}
+#           static_list: "dailycheckin"
+#           dst_account_type: user
+# #           force_update: true
+#           rename_dst: true
+#           # clone_style: https
+#           rename_fmt: ${{ env.DEFAULT_RENAME_FMT }}
