@@ -14,7 +14,7 @@ jobs:
     env:
       PAT: ${{ secrets.PAT }}
       DEFAULT_DST: github/LouisSina
-      DEFAULT_RENAME_FMT: 's/(.*)/${SRC_TYPE}_${SRC_ACCOUNT}_\1/g'
+      #DEFAULT_RENAME_FMT: 's/(.*)/${SRC_TYPE}_${SRC_ACCOUNT}_\1/g'
     runs-on: ubuntu-latest
     if: github.event.repository.owner.id == github.event.sender.id 
 
