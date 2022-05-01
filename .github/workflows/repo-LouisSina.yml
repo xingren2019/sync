@@ -43,15 +43,15 @@ jobs:
           rename_fmt: ${{ env.DEFAULT_RENAME_FMT }}
       
       
-    //  - name: sync github -> gitee
-    //    uses: Yikun/hub-mirror-action@master
-    //    if: env.dst_key
-    //    with:
-    //      src: github/sinagod
-    //      dst: gitee/the_king_god
-    //      static_list: "github_adwktt_adwktt,github_adwktt_test"
-    //      dst_key: ${{ secrets.GITEE_PRIVATE_KEY }}
-    //      dst_token: ${{ secrets.GITEE_TOKEN }}
+#       - name: sync github -> gitee
+#         uses: Yikun/hub-mirror-action@master
+#         if: env.dst_key
+#         with:
+#           src: github/sinagod
+#           dst: gitee/the_king_god
+#           static_list: "github_adwktt_adwktt,github_adwktt_test"
+#           dst_key: ${{ secrets.GITEE_PRIVATE_KEY }}
+#           dst_token: ${{ secrets.GITEE_TOKEN }}
 
      
 
