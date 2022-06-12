@@ -43,6 +43,55 @@ jobs:
 #           rename_fmt: ${{ env.DEFAULT_RENAME_FMT }}
       
       
+      - name: sml2h3
+        uses: fakedon/hub-mirror-action@fakedon
+        with:
+          src: github/sml2h3
+          dst: ${{ env.DEFAULT_DST }}
+          dst_key: ${{ secrets.LOUIS_GITHUB_SSH_KEY }}
+          dst_token: ${{ secrets.LOUIS_GITHUB_TOKEN }}
+          static_list: "ast_tools"
+          dst_account_type: user
+          force_update: true
+#           rename_dst: true
+          clone_style: https
+#           rename_fmt: ${{ env.DEFAULT_RENAME_FMT }}
+
+ 
+      - name: cilame
+        uses: fakedon/hub-mirror-action@fakedon
+        with:
+          src: github/cilame
+          dst: ${{ env.DEFAULT_DST }}
+          dst_key: ${{ secrets.LOUIS_GITHUB_SSH_KEY }}
+          dst_token: ${{ secrets.LOUIS_GITHUB_TOKEN }}
+          static_list: "v_jstools"
+          dst_account_type: user
+          force_update: true
+#           rename_dst: true
+          clone_style: https
+#           rename_fmt: ${{ env.DEFAULT_RENAME_FMT }}
+
+
+
+      - name: NXY666
+        uses: fakedon/hub-mirror-action@fakedon
+        with:
+          src: github/NXY666
+          dst: ${{ env.DEFAULT_DST }}
+          dst_key: ${{ secrets.LOUIS_GITHUB_SSH_KEY }}
+          dst_token: ${{ secrets.LOUIS_GITHUB_TOKEN }}
+          static_list: "JsjiamiV6-Decryptor"
+          dst_account_type: user
+          force_update: true
+#           rename_dst: true
+          clone_style: https
+#           rename_fmt: ${{ env.DEFAULT_RENAME_FMT }}
+
+
+
+      
+      
 #       - name: sync github -> gitee
 #         uses: Yikun/hub-mirror-action@master
 #         if: env.dst_key
